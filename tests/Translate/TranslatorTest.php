@@ -17,10 +17,10 @@ namespace Lsv\GoogleTranslationBundle\Tests\Translate;
 use Google\Cloud\Translate\V2\TranslateClient;
 use Lsv\GoogleTranslationBundle\Translate\Client\TranslatorClientInterface;
 use Lsv\GoogleTranslationBundle\Translate\GoogleTranslator;
+use Lsv\GoogleTranslationBundle\Translate\Profiler\TranslationProfileModel;
 use Lsv\GoogleTranslationBundle\Translate\Profiler\TranslatorProfilerInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Stopwatch\StopwatchEvent;
 
 class TranslatorTest extends TestCase
 {
@@ -51,7 +51,7 @@ class TranslatorTest extends TestCase
             ->with('Hello')
             ->willReturn(['languageCode' => 'en']);
 
-        $event = $this->createMock(StopwatchEvent::class);
+        $event = $this->createMock(TranslationProfileModel::class);
         $this->profiler
             ->expects($this->once())
             ->method('start')
@@ -75,7 +75,7 @@ class TranslatorTest extends TestCase
             ->with(['target' => 'en'])
             ->willReturn(['en', 'da', 'sv']);
 
-        $event = $this->createMock(StopwatchEvent::class);
+        $event = $this->createMock(TranslationProfileModel::class);
         $this->profiler
             ->expects($this->once())
             ->method('start')
@@ -103,7 +103,7 @@ class TranslatorTest extends TestCase
                 'text' => 'Hej Verden',
             ]);
 
-        $event = $this->createMock(StopwatchEvent::class);
+        $event = $this->createMock(TranslationProfileModel::class);
         $this->profiler
             ->expects($this->once())
             ->method('start')
@@ -131,7 +131,7 @@ class TranslatorTest extends TestCase
                 'text' => 'Hej Verden#.#.#Verden Hej',
             ]);
 
-        $event = $this->createMock(StopwatchEvent::class);
+        $event = $this->createMock(TranslationProfileModel::class);
         $this->profiler
             ->expects($this->once())
             ->method('start')
@@ -157,7 +157,7 @@ class TranslatorTest extends TestCase
             ->with('Hello World', ['target' => 'da', 'source' => 'en', 'format' => 'text'])
             ->willReturn(null);
 
-        $event = $this->createMock(StopwatchEvent::class);
+        $event = $this->createMock(TranslationProfileModel::class);
         $this->profiler
             ->expects($this->once())
             ->method('start')

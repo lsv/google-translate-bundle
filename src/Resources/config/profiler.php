@@ -19,8 +19,7 @@ use Lsv\GoogleTranslationBundle\Translate\Profiler\TranslatorProfilerInterface;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->set(GoogleTranslatorProfiler::class)
-            ->args([service('debug.stopwatch')->nullOnInvalid()]);
+        ->set(GoogleTranslatorProfiler::class);
 
     $container->services()->alias(TranslatorProfilerInterface::class, GoogleTranslatorProfiler::class);
 };

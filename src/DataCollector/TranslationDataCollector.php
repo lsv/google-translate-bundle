@@ -29,21 +29,29 @@ class TranslationDataCollector extends DataCollector
 
     public function collect(Request $request, Response $response, ?\Throwable $exception = null): void
     {
+        $this->data['Test'][] = [
+            'query' => 'query',
+            'sourceLanguage' => 'source',
+            'targetLanguage' => 'target',
+            'duration' => '200',
+            'memoryEnd' => '100',
+            'memoryPeak' => '125',
+        ];
+
         foreach ($this->profiler->getProfiles() as $profile) {
-            $this->data[$profile->type][] = $profile;
+            $this->data[$profile->type][] = [
+                'query' => $profile->query,
+                'sourceLanguage' => $profile->sourceLanguage,
+                'targetLanguage' => $profile->targetLanguage,
+                'duration' => $profile->endDuration - $profile->startDuration,
+                'memoryEnd' => $profile->memoryEnd,
+                'memoryPeak' => $profile->memoryPeak,
+            ];
         }
     }
 
     public function getName(): string
     {
-        return 'lsv.google_translate.data_collector.translate';
-    }
-
-    /**
-     * @return array<mixed>|Data
-     */
-    public function getData(): array|Data
-    {
-        return $this->data;
+        return 'lsv_google_translate';
     }
 }

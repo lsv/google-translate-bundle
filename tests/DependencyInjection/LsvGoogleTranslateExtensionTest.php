@@ -32,6 +32,7 @@ class LsvGoogleTranslateExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
         $this->assertContainerBuilderHasParameter('lsv_google_translate.google_api_key', 'apikey');
+
         $this->assertContainerBuilderHasService(GoogleTranslatorClient::class);
         $this->assertContainerBuilderHasService(TranslatorClientInterface::class);
 
@@ -50,7 +51,7 @@ class LsvGoogleTranslateExtensionTest extends AbstractExtensionTestCase
     public function testProfiler(): void
     {
         $this->setParameter('kernel.debug', true);
-        $this->load(['profiler' => true]);
+        $this->load();
         $this->assertContainerBuilderHasService(TranslationDataCollector::class);
     }
 

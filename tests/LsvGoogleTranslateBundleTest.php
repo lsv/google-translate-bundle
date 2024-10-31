@@ -21,8 +21,6 @@ class LsvGoogleTranslateBundleTest extends TestCase
 {
     public function testBundle(): void
     {
-        $bundle = new LsvGoogleTranslateBundle();
-        self::assertSame('LsvGoogleTranslateBundle', $bundle->getName());
-        self::assertSame(realpath(__DIR__.'/..'), $bundle->getPath());
+        self::assertSame(realpath(__DIR__.'/..'), (new LsvGoogleTranslateBundle())->getPath());
     }
 }

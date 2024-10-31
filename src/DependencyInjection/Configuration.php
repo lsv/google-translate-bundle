@@ -24,11 +24,12 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder('lsv_google_translate');
         $root = $treeBuilder->getRootNode();
 
+        // @formatter:off
         $root
             ->children()
                 ->scalarNode('google_api_key')->isRequired()->end()
-                ->booleanNode('profiler')->defaultFalse()->end()
             ->end();
+        // @formatter:on
 
         return $treeBuilder;
     }

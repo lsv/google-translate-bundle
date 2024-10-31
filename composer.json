@@ -1,6 +1,6 @@
 {
   "name": "lsv/google-translation-bundle",
-  "type": "bundle",
+  "type": "symfony-bundle",
   "license": "MIT",
   "description": "Symfony bundle to translate text with google translation",
   "authors": [
@@ -18,7 +18,9 @@
     "symfony/http-kernel": "^7"
   },
   "autoload": {
-    "psr-4": { "Lsv\\GoogleTranslationBundle\\": "src" }
+    "psr-4": {
+      "Lsv\\GoogleTranslationBundle\\": "src"
+    }
   },
   "require-dev": {
     "ergebnis/license": "^2.5",
@@ -34,7 +36,9 @@
     "symfony/stopwatch": "^7"
   },
   "autoload-dev": {
-    "psr-4": { "Lsv\\GoogleTranslationBundle\\Tests\\": "tests" }
+    "psr-4": {
+      "Lsv\\GoogleTranslationBundle\\Tests\\": "tests"
+    }
   },
   "scripts": {
     "fix": [

@@ -19,10 +19,10 @@ use Lsv\GoogleTranslationBundle\Translate\Profiler\TranslatorProfilerInterface;
 
 return static function (ContainerConfigurator $container): void {
     $container->services()
-        ->set(TranslationDataCollector::class)
+        ->set('data_collector.lsv_google_translate', TranslationDataCollector::class)
             ->args([service(TranslatorProfilerInterface::class)])
             ->tag('data_collector', [
-                'id' => TranslationDataCollector::class,
-                'template' => 'Collector/translate.html.twig',
+                'id' => 'lsv_google_translate',
+                'template' => '@LsvGoogleTranslate/data_collector/template.html.twig',
             ]);
 };

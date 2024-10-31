@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Lsv\GoogleTranslationBundle\Translate\Profiler;
 
-use Symfony\Component\Stopwatch\StopwatchEvent;
-
 interface TranslatorProfilerInterface
 {
     public function start(
@@ -23,9 +21,9 @@ interface TranslatorProfilerInterface
         string $query,
         ?string $sourceLanguage = null,
         ?string $targetLanguage = null,
-    ): ?StopwatchEvent;
+    ): TranslationProfileModel;
 
-    public function end(?StopwatchEvent $event = null): void;
+    public function end(TranslationProfileModel $event): void;
 
     /**
      * @return TranslationProfileModel[]
