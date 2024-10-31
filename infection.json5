@@ -13,7 +13,7 @@
     "perMutator": ".build/infection/per-mutator.md",
     "summaryJson": ".build/infection/summary.json",
     "stryker": {
-      "badge": "master"
+      "report": "master"
     }
   }
 }
