@@ -16,7 +16,6 @@ namespace Lsv\GoogleTranslationBundle\Tests\DependencyInjection;
 
 use Lsv\GoogleTranslationBundle\Command\DetectCommand;
 use Lsv\GoogleTranslationBundle\Command\TranslateCommand;
-use Lsv\GoogleTranslationBundle\DataCollector\TranslationDataCollector;
 use Lsv\GoogleTranslationBundle\DependencyInjection\LsvGoogleTranslateExtension;
 use Lsv\GoogleTranslationBundle\Translate\Client\GoogleTranslatorClient;
 use Lsv\GoogleTranslationBundle\Translate\Client\TranslatorClientInterface;
@@ -45,14 +44,14 @@ class LsvGoogleTranslateExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasService(GoogleTranslator::class);
         $this->assertContainerBuilderHasService(TranslatorInterface::class);
 
-        $this->assertContainerBuilderNotHasService(TranslationDataCollector::class);
+        $this->assertContainerBuilderNotHasService('data_collector.lsv_google_translate');
     }
 
     public function testProfiler(): void
     {
         $this->setParameter('kernel.debug', true);
         $this->load();
-        $this->assertContainerBuilderHasService(TranslationDataCollector::class);
+        $this->assertContainerBuilderHasService('data_collector.lsv_google_translate');
     }
 
     /**

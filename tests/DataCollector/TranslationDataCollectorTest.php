@@ -33,7 +33,7 @@ class TranslationDataCollectorTest extends TestCase
 
     public function testGetCollectorName(): void
     {
-        self::assertSame('lsv_google_translate.data_collector', $this->collector->getName());
+        self::assertSame('lsv_google_translate', $this->collector->getName());
     }
 
     public function testWillInsertData(): void

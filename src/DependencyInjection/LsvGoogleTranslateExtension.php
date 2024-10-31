@@ -27,15 +27,14 @@ class LsvGoogleTranslateExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('lsv_google_translate.google_api_key', $config['google_api_key']);
 
-        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../../config'));
         $loader->load('client.php');
         $loader->load('profiler.php');
         $loader->load('translator.php');
         $loader->load('command.php');
-        $loader->load('collector.php');
 
-//        if ($container->hasParameter('kernel.debug') && $container->getParameter('kernel.debug')) {
-//            $loader->load('collector.php');
-//        }
+        if ($container->hasParameter('kernel.debug') && $container->getParameter('kernel.debug')) {
+            $loader->load('collector.php');
+        }
     }
 }

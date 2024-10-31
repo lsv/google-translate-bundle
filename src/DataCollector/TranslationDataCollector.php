@@ -29,15 +29,6 @@ class TranslationDataCollector extends DataCollector
 
     public function collect(Request $request, Response $response, ?\Throwable $exception = null): void
     {
-        $this->data['Test'][] = [
-            'query' => 'query',
-            'sourceLanguage' => 'source',
-            'targetLanguage' => 'target',
-            'duration' => '200',
-            'memoryEnd' => '100',
-            'memoryPeak' => '125',
-        ];
-
         foreach ($this->profiler->getProfiles() as $profile) {
             $this->data[$profile->type][] = [
                 'query' => $profile->query,
@@ -48,6 +39,14 @@ class TranslationDataCollector extends DataCollector
                 'memoryPeak' => $profile->memoryPeak,
             ];
         }
+    }
+
+    /**
+     * @return array<mixed>|Data
+     */
+    public function getData(): array|Data
+    {
+        return $this->data;
     }
 
     public function getName(): string
