@@ -20,7 +20,7 @@ use Lsv\GoogleTranslationBundle\Translate\Client\TranslatorClientInterface;
 return static function (ContainerConfigurator $container): void {
     $container->services()
         ->set(GoogleTranslatorClient::class)
-            ->args(['%lsv.google_translate.google_api_key%']);
+            ->args(['%lsv_google_translate.google_api_key%']);
 
     $container->services()->alias(TranslatorClientInterface::class, GoogleTranslatorClient::class);
 };
