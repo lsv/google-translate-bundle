@@ -1,0 +1,51 @@
+{
+  "name": "lsv/google-translation-bundle",
+  "type": "bundle",
+  "authors": [
+    {
+      "name": "Martin Aarhof",
+      "email": "martin.aarhof@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.3",
+    "google/cloud-translate": "^1.19",
+    "symfony/config": "^7.1",
+    "symfony/console": "^7.1",
+    "symfony/dependency-injection": "^7.1",
+    "symfony/http-kernel": "^7.1"
+  },
+  "autoload": {
+    "psr-4": { "Lsv\\GoogleTranslationBundle\\": "src" }
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.64",
+    "infection/infection": "^0.29.8",
+    "matthiasnoback/symfony-dependency-injection-test": "^6.0",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^1.12",
+    "phpstan/phpstan-symfony": "^1.4",
+    "phpunit/phpunit": "^11.4",
+    "rregeer/phpunit-coverage-check": "^0.3.1",
+    "symfony/stopwatch": "^7.1"
+  },
+  "autoload-dev": {
+    "psr-4": { "Lsv\\GoogleTranslationBundle\\Tests\\": "tests" }
+  },
+  "scripts": {
+    "fix": [
+      "php-cs-fixer fix",
+      "phpstan",
+      "phpunit",
+      "coverage-check .build/coverage/clover.xml 100 --only-percentage",
+      "infection --skip-initial-tests --threads=8 --coverage=.build/coverage -s"
+    ]
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "infection/extension-installer": true
+    }
+  }
+}
