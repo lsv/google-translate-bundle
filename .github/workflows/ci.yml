@@ -38,17 +38,17 @@ jobs:
         run: vendor/bin/phpstan
 
       - name: PHPUnit
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --log-junit junit.xml
         env:
           XDEBUG_MODE: coverage
 
       - name: CoverageCheck
         run: vendor/bin/coverage-check .build/coverage/clover.xml 100
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload test results to Codecov
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: PHP Infection
         run: vendor/bin/infection --skip-initial-tests --threads=64 --coverage=.build/coverage
