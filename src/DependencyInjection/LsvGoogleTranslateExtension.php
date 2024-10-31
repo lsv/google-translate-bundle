@@ -32,9 +32,5 @@ class LsvGoogleTranslateExtension extends Extension
         $loader->load('profiler.php');
         $loader->load('translator.php');
         $loader->load('command.php');
-
-        if ($container->hasParameter('kernel.debug') && $container->getParameter('kernel.debug')) {
-            $loader->load('collector.php');
-        }
     }
 }
