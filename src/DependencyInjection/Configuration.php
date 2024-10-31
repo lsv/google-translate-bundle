@@ -27,6 +27,7 @@ class Configuration implements ConfigurationInterface
         $root
             ->children()
                 ->scalarNode('google_api_key')->isRequired()->end()
+                ->booleanNode('profiler')->defaultFalse()->end()
             ->end();
 
         return $treeBuilder;
