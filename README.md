@@ -1,6 +1,10 @@
 GoogleTranslateBundle
 =====================
 
+[![codecov](https://codecov.io/github/lsv/google-translate-bundle/graph/badge.svg?token=th00dq8CkU)](https://codecov.io/github/lsv/google-translate-bundle)
+[![SymfonyInsight](https://insight.symfony.com/projects/8e5bd5d0-6037-4537-9c45-1f11745fba0e/mini.svg)](https://insight.symfony.com/projects/8e5bd5d0-6037-4537-9c45-1f11745fba0e)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgoogle-translate-bundle)](https://dashboard.stryker-mutator.io/reports/google-translate-bundle)
+
 ## Usage
 
 #### Command

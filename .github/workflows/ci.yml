@@ -45,5 +45,12 @@ jobs:
       - name: CoverageCheck
         run: vendor/bin/coverage-check .build/coverage/clover.xml 100
 
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: PHP Infection
         run: vendor/bin/infection --skip-initial-tests --threads=64 --coverage=.build/coverage
+        env:
+          INFECTION_DASHBOARD_API_KEY: ${{ secrets.INFECTION_DASHBOARD_API_KEY }}

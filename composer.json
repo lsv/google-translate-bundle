@@ -1,6 +1,8 @@
 {
   "name": "lsv/google-translation-bundle",
   "type": "bundle",
+  "license": "MIT",
+  "description": "Symfony bundle to translate text with google translation",
   "authors": [
     {
       "name": "Martin Aarhof",
@@ -10,15 +12,16 @@
   "require": {
     "php": ">=8.3",
     "google/cloud-translate": "^1.19",
-    "symfony/config": "^7.1",
-    "symfony/console": "^7.1",
-    "symfony/dependency-injection": "^7.1",
-    "symfony/http-kernel": "^7.1"
+    "symfony/config": "^7",
+    "symfony/console": "^7",
+    "symfony/dependency-injection": "^7",
+    "symfony/http-kernel": "^7"
   },
   "autoload": {
     "psr-4": { "Lsv\\GoogleTranslationBundle\\": "src" }
   },
   "require-dev": {
+    "roave/security-advisories": "dev-latest",
     "friendsofphp/php-cs-fixer": "^3.64",
     "infection/infection": "^0.29.8",
     "matthiasnoback/symfony-dependency-injection-test": "^6.0",
@@ -27,7 +30,7 @@
     "phpstan/phpstan-symfony": "^1.4",
     "phpunit/phpunit": "^11.4",
     "rregeer/phpunit-coverage-check": "^0.3.1",
-    "symfony/stopwatch": "^7.1"
+    "symfony/stopwatch": "^7"
   },
   "autoload-dev": {
     "psr-4": { "Lsv\\GoogleTranslationBundle\\Tests\\": "tests" }
