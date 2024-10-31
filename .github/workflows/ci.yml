@@ -38,7 +38,7 @@ jobs:
         run: vendor/bin/phpstan
 
       - name: PHPUnit
-        run: vendor/bin/phpunit --log-junit junit.xml
+        run: vendor/bin/phpunit
         env:
           XDEBUG_MODE: coverage
 
