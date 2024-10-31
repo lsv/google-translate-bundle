@@ -3,7 +3,7 @@ GoogleTranslateBundle
 
 [![codecov](https://codecov.io/github/lsv/google-translate-bundle/branch/master/graph/badge.svg?token=th00dq8CkU)](https://codecov.io/github/lsv/google-translate-bundle)
 [![SymfonyInsight](https://insight.symfony.com/projects/8e5bd5d0-6037-4537-9c45-1f11745fba0e/mini.svg)](https://insight.symfony.com/projects/8e5bd5d0-6037-4537-9c45-1f11745fba0e)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat-square&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgoogle-translate-bundle)](https://dashboard.stryker-mutator.io/reports/google-translate-bundle)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=plain&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Flsv%2Fgoogle-translate-bundle%2Fmaster)](https://dashboard.stryker-mutator.io/reports/google-translate-bundle/master)
 
 ## Usage
 
@@ -51,8 +51,6 @@ The bundle will be automatically enabled and the configuration will be added to 
 ### Without flex
 
 Add the bundle to your `config/bundles.php` file
-
-```bash
 
 ```php
 return [
