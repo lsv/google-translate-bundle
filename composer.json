@@ -44,7 +44,7 @@
     "fix": [
       "php-cs-fixer fix",
       "phpstan",
-      "phpunit",
+      "XDEBUG_MODE=coverage phpunit",
       "coverage-check .build/coverage/clover.xml 100 --only-percentage",
       "infection --skip-initial-tests --threads=8 --coverage=.build/coverage -s"
     ]
